@@ -1,0 +1,99 @@
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: orange;
+}
+
+.hotspot-details {
+  position: relative;
+  width: 400px; 
+  left: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  display: none; 
+}
+
+.hotspot:hover .hotspot-details {
+  display: flex; 
+}
+
+.hotspot-image {
+  max-width: 45%;
+  height: auto;
+  display: block;
+  margin-bottom: 8px;
+  margin: auto;
+}
+
+.hotspot-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.hotspot-info p {
+  text-align: left;
+}
+
+.hotspot-description {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-bottom: 15px;
+}
+
+.hotspot-price {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.hotspot-actions {
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotspot-button {
+  width: 60%;
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 6px;
+  margin: 5px 4px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 0.9em;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.hotspot-button.add-to-cart {
+    font-weight: bold;
+  background-color: orange;
+  color: white;
+  border-color: orange; 
+  font-size: 16px;
+}
+
+.hotspot-button.add-to-cart:hover {
+  background-color: black;
+  border-color: black;
+}
+
+.hotspot-button.view-product {
+  background-color: white;
+  border: 0.5px solid black;
+  color: black;
+  border-color: black; 
+}
+
