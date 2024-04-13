@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { IProduct } from "../types/hotspotTypes";
 import "./Hotspot.css";
 
-type HotspotProps = {
+interface HotspotProps {
   product: IProduct;
   top: string;
   left: string;
-};
+  index: number;
+  isActive: boolean;
+  handleMouseEnter: (index: number) => void;
+  handleMouseLeave: () => void;
+}
 
-const Hotspot: React.FC<HotspotProps> = ({ product, top, left  }) => {
-  const [showDetails, setShowDetails] = useState(false);
-
+const Hotspot: React.FC<HotspotProps> = ({
+  product,
+  top,
+  left,
+  index,
+  isActive,
+  handleMouseEnter,
+  handleMouseLeave,
+}) => {
   const isTop = parseFloat(top) <= 40;
   const isBottom = parseFloat(top) >= 60;
   const isLeft = parseFloat(left) <= 40;
@@ -18,32 +28,35 @@ const Hotspot: React.FC<HotspotProps> = ({ product, top, left  }) => {
 
   let transformOffsetY = "10%";
   if (isTop) transformOffsetY = "0%";
-  if (isBottom) transformOffsetY = "-86%";
+  if (isBottom) transformOffsetY = "-95%";
 
-  let transformOffsetX = '-50%';
-  if(isLeft) transformOffsetX = "-3%";
-  if(isRight) transformOffsetX = "-93%";
+  let transformOffsetX = "-50%";
+  if (isLeft) transformOffsetX = "-3%";
+  if (isRight) transformOffsetX = "-94%";
 
-  let verticalPos = isTop ? "100%" : "auto"; 
-  let bottomPos = isBottom ? "100%" : "auto"; 
+  let verticalPos = isTop ? "100%" : "auto";
+  let bottomPos = isBottom ? "100%" : "auto";
+
+  useEffect(() => {
+    console.log(isActive);
+  }, [isActive]);
 
   return (
     <div
-      className="hotspot"
+      className={`hotspot ${isActive ? "active" : ""}`}
       style={{ top, left }}
-      onMouseEnter={() => setShowDetails(true)}
-      onMouseLeave={() => setShowDetails(false)}
+      onMouseEnter={() => handleMouseEnter(index)}
+      onMouseLeave={handleMouseLeave}
     >
-      {showDetails && (
+      {isActive && (
         <div
           className="hotspot-details"
           style={{
             top: verticalPos,
             bottom: bottomPos,
-            left: isRight ? "auto" : "50%", 
-            right: isLeft ? "50%" : "auto", 
+            left: isRight ? "auto" : "50%",
+            right: isLeft ? "50%" : "auto",
             transform: `translate(${transformOffsetX}, ${transformOffsetY})`,
-            zIndex: 100,
           }}
         >
           <img src={product.img} alt={product.name} className="hotspot-image" />

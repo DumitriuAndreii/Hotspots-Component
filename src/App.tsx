@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import HotspotContainer from './components/HotspotContainer';
 import { IHotspotImageProps } from './types/hotspotTypes';
 import './App.css';
+import LazyImageLoader from './components/LazyImageLoader';
+
 
 function App() {
   const [hotspotsData, setHotspotsData] = useState<IHotspotImageProps[]>([]);
@@ -25,6 +27,8 @@ function App() {
       <h1>Mobexpert</h1>
       {dormitorData && <HotspotContainer {...dormitorData} />}
       {livingData && <HotspotContainer {...livingData} />}
+      <LazyImageLoader src="./assets/pic1.png" alt="Descriptive Alt Text 1" />
+      <LazyImageLoader src="./assets/pic2.png" alt="Descriptive Alt Text 2" />
     </div>
   );
 }
