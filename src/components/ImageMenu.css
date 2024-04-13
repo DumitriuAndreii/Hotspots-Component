@@ -1,0 +1,15 @@
+.elements-menu {
+  width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-item {
+  width: 70px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+.active {
+  border: 1px solid #ff6600;
+}

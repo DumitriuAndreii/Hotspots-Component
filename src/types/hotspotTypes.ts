@@ -3,6 +3,7 @@ export type IProduct = {
     img: string; 
     name: string; 
     price: string; 
+    priceCut?: string;
     description: string;
     addToCartLink: string; 
     detailsLink: string; 

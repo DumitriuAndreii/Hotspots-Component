@@ -1,0 +1,36 @@
+
+  
+  .buttons-menu {
+    margin-top: 10px;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .button-m {
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+  }
+  
+  .button-m:hover {
+    background-color: #ff6600;
+    color: white;
+    border: 1px solid #ff6600;
+  }
+  
+  .cart {
+    color: #ff6600;
+  }
+  
+  .cart:hover {
+    color: white;
+  }
+  
+  .vezi {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  

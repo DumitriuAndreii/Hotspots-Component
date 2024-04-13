@@ -21,6 +21,7 @@ const Hotspot: React.FC<HotspotProps> = ({
   handleMouseEnter,
   handleMouseLeave,
 }) => {
+
   const isTop = parseFloat(top) <= 40;
   const isBottom = parseFloat(top) >= 60;
   const isLeft = parseFloat(left) <= 40;
@@ -36,10 +37,6 @@ const Hotspot: React.FC<HotspotProps> = ({
 
   let verticalPos = isTop ? "100%" : "auto";
   let bottomPos = isBottom ? "100%" : "auto";
-
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
 
   return (
     <div
@@ -62,6 +59,7 @@ const Hotspot: React.FC<HotspotProps> = ({
           <img src={product.img} alt={product.name} className="hotspot-image" />
           <div className="hotspot-info">
             <p className="hotspot-description">{product.description}</p>
+            {product.priceCut && <p className="price-cut">{product.priceCut} lei</p>}
             <p className="hotspot-price">{product.price} lei</p>
             <div className="hotspot-actions">
               <a
