@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import HotspotContainer from './components/HotspotContainer';
-import { HotspotImageProps } from './types/hotspotTypes';
+import { IHotspotImageProps } from './types/hotspotTypes';
 import './App.css';
 
 function App() {
-  const [hotspotsData, setHotspotsData] = useState<HotspotImageProps[]>([]);
+  const [hotspotsData, setHotspotsData] = useState<IHotspotImageProps[]>([]);
 
   useEffect(() => {
     // Assuming 'hotspotsData' is the ID of the <script> tag in your index.html
@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Mobexpert</h1>
       {dormitorData && <HotspotContainer {...dormitorData} />}
       {livingData && <HotspotContainer {...livingData} />}
     </div>

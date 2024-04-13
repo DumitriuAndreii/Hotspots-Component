@@ -8,30 +8,22 @@ type HotspotProps = {
   left: string;
 };
 
-const Hotspot: React.FC<HotspotProps> = ({ product, top, left }) => {
+const Hotspot: React.FC<HotspotProps> = ({ product, top, left  }) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  const isTop = parseFloat(top) <= 20;
-  const isBottom = parseFloat(top) >= 80;
-  const isLeft = parseFloat(left) <= 20;
-  const isRight = parseFloat(left) >= 80;
+  const isTop = parseFloat(top) <= 40;
+  const isBottom = parseFloat(top) >= 60;
+  const isLeft = parseFloat(left) <= 40;
+  const isRight = parseFloat(left) >= 60;
 
   let transformOffsetY = "10%";
   if (isTop) transformOffsetY = "0%";
-  if (isBottom) transformOffsetY = "-90%";
+  if (isBottom) transformOffsetY = "-86%";
 
   let transformOffsetX = '-50%';
   if(isLeft) transformOffsetX = "-3%";
-  if(isRight) transformOffsetX = "-95%";
+  if(isRight) transformOffsetX = "-93%";
 
-  console.log(
-    isTop,
-    isRight,
-    isBottom,
-    isLeft,
-    transformOffsetY,
-    transformOffsetX
-  );
   let verticalPos = isTop ? "100%" : "auto"; 
   let bottomPos = isBottom ? "100%" : "auto"; 
 

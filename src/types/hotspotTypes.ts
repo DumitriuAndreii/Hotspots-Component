@@ -14,7 +14,7 @@ export type IProduct = {
     product: IProduct;
   };
   
-  export type HotspotImageProps = {
+  export type IHotspotImageProps = {
     id: string; 
     src: string; 
     hotspots: IHotspot[]; 
