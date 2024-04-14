@@ -12,7 +12,7 @@
 
 .hotspot:hover {
   background-color: #ff6600;
-  padding: 5px;
+  padding: 3px;
 }
 
 .hotspot-details {
@@ -34,10 +34,10 @@
 
 .hotspot.active,
 .hotspot:hover {
-  background-color: #ff6600; /* Highlight color when active or hovered */
-  width: 15px; /* Larger size when active or hovered */
+  background-color: #ff6600; 
+  width: 15px; 
   height: 15px;
-  z-index: 5; /* Make sure it's above non-active hotspots */
+  z-index: 5; 
 }
 
 .hotspot-image {

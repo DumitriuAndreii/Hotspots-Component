@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { IHotspotImageProps, IHotspot } from "../types/hotspotTypes";
+import React, { useState } from "react";
+import { IHotspotImageProps } from "../types/hotspotTypes";
 import "./HotspotContainer.css";
 import Hotspot from "./Hotspot";
 import ImageMenu from "./ImageMenu";

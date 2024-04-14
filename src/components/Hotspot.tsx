@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { IProduct } from "../types/hotspotTypes";
 import "./Hotspot.css";
 
@@ -27,7 +27,7 @@ const Hotspot: React.FC<HotspotProps> = ({
   const isLeft = parseFloat(left) <= 40;
   const isRight = parseFloat(left) >= 60;
 
-  let transformOffsetY = "10%";
+  let transformOffsetY = "7%";
   if (isTop) transformOffsetY = "0%";
   if (isBottom) transformOffsetY = "-95%";
 
