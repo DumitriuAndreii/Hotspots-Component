@@ -4,6 +4,7 @@ import "./HotspotContainer.css";
 import Hotspot from "./Hotspot";
 import ImageMenu from "./ImageMenu";
 import ButtonsMenu from "./ButtonsMenu";
+import HotspotPortal from "./HotspotPortal";
 
 const HotspotContainer: React.FC<IHotspotImageProps> = ({
   id,
@@ -24,8 +25,20 @@ const HotspotContainer: React.FC<IHotspotImageProps> = ({
     <div className="hotspot-container-big">
       <div id={id} className="hotspot-container">
         <img src={src} alt="Hotspot Background" className="responsive-image" />
-        {hotspots.map((hotspot, index) => (
+        {/* {hotspots.map((hotspot, index) => (
           <Hotspot
+            key={index}
+            product={hotspot.product}
+            top={hotspot.top}
+            left={hotspot.left}
+            isActive={index === hoveredIndex}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseLeave={handleMouseLeave}
+            index={index}
+          />
+        ))} */}
+        {hotspots.map((hotspot, index) => (
+          <HotspotPortal
             key={index}
             product={hotspot.product}
             top={hotspot.top}

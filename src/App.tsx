@@ -3,6 +3,10 @@ import HotspotContainer from './components/HotspotContainer';
 import { IHotspotImageProps } from './types/hotspotTypes';
 import './App.css';
 import VideoComponent from './components/VideoComponent';
+import LazyVideoLoader from './components/LazyVideoLoader';
+
+const VideoComponentLazy = React.lazy(() => import('../src/components/VideoComponent'));
+
 
 
 function App() {
@@ -12,7 +16,7 @@ function App() {
     const hotspotsDataElement = document.getElementById('hotspotsData');
     if (hotspotsDataElement) {
       const data = JSON.parse(hotspotsDataElement.textContent || '');
-      setHotspotsData(data);
+      setHotspotsData(data);      
     }
   }, []);
 
@@ -31,6 +35,7 @@ function App() {
         src="./assets/video/video.mp4"
         poster="/assets/video/poster2.png"
       />
+      <LazyVideoLoader />
     </div>
   );
 }
