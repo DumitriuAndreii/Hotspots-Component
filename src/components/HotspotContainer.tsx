@@ -25,7 +25,7 @@ const HotspotContainer: React.FC<IHotspotImageProps> = ({
     <div className="hotspot-container-big">
       <div id={id} className="hotspot-container">
         <img src={src} alt="Hotspot Background" className="responsive-image" />
-        {/* {hotspots.map((hotspot, index) => (
+        {hotspots.map((hotspot, index) => (
           <Hotspot
             key={index}
             product={hotspot.product}
@@ -36,8 +36,8 @@ const HotspotContainer: React.FC<IHotspotImageProps> = ({
             handleMouseLeave={handleMouseLeave}
             index={index}
           />
-        ))} */}
-        {hotspots.map((hotspot, index) => (
+        ))}
+        {/* {hotspots.map((hotspot, index) => (
           <HotspotPortal
             key={index}
             product={hotspot.product}
@@ -48,7 +48,7 @@ const HotspotContainer: React.FC<IHotspotImageProps> = ({
             handleMouseLeave={handleMouseLeave}
             index={index}
           />
-        ))}
+        ))} */}
       </div>
       <div className="bottom-menu">
         <ImageMenu
